@@ -9,8 +9,10 @@ module.exports = {
 	output: {
 		filename: 'main.js',
 		path: path.resolve(__dirname, 'dist'),
+		assetModuleFilename: './assets/[name][ext]',
 	},
 
+	context: path.resolve(__dirname, 'src/'),
 	watch: NODE_ENV === 'development',
 	watchOptions: {
 		ignored: /node_modules/,
@@ -37,29 +39,24 @@ module.exports = {
 			},
 
 			{
+        test: /\.html$/i,
+        loader: "html-loader",
+      },
+
+			{
 				test: [/\.svg$/, /\.png$/, /\.bmp$/, /\.gif$/, /\.jp?g$/],
-				use: [
-					{
-						loader: 'file-loader',
-						options: {
-							name: '[name].[ext]',
-							outputPath: 'assets/',
-						}
-					}
-				]
+				type: 'asset/resource',
+				generator: {
+					filename: 'assets/pics/[name][ext]',
+				},
 			},
 
 			{
 				test: [/\.ttf$/, /\.woff$/, /\.woff2$/, /\.eot$/],
-				use: [
-					{
-						loader: 'file-loader',
-						options: {
-							name: '[name].[ext]',
-							outputPath: 'fonts/',
-						}
-					}
-				]
+				type: 'asset/resource',
+				generator: {
+					filename: 'assets/fonts/[name][ext]',
+				},
 			},
 		]
 	},

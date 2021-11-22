@@ -1,1 +1,1 @@
-console.log('### INIT');
+import "./styles/style.sass";

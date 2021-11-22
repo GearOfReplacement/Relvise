@@ -1,0 +1,229 @@
+@use 'variables'
+@use 'fonts'
+
+*
+	box-sizing: border-box
+
+	margin: 0
+	padding: 0
+
+html
+	font-size: 14px
+
+a
+	text-decoration: none
+	color: #fff
+	
+	cursor: pointer
+
+ol, ul
+	list-style-type: none
+
+button
+	border: none
+
+img
+	width: 100%
+	heigth: 100%
+
+.main 
+	width: 100%
+	height: 100%
+
+.banner
+	width: 100%
+	min-height: 794px
+	
+
+	background: url("../assets/image/background_banner.jpg") 50% 50% / cover no-repeat
+
+	font-family: "Montserrat"
+
+	&__title
+		margin-top: 80px
+
+	&__descr
+		min-height: 60px
+		width: 376px
+		margin-top: 36px
+
+		font-size: 1.42rem
+		font-weight: 500
+
+		line-height: 2.5rem
+		letter-spacing: 0.2px
+		text-align: left
+
+		color: variables.$side-txt
+
+	&__buttons
+		min-height: 48px
+		width: 352px
+		margin-top: 45px
+
+		display: flex
+		align-items: center
+		justify-content: space-between
+
+	&__button_1
+		min-height: 48px
+		width: 185px
+
+		background-color: variables.$main
+		color: variables.$light-txt
+
+		font-weight: 700
+		font-size: 1rem
+		line-height: 2rem
+		
+		text-align: center
+		letter-spacing: 0.2px
+
+		border: 1px solid variables.$main
+		border-radius: 38px
+
+		&:hover
+			cursor: pointer
+
+			color: variables.$main
+			background-color: transparent
+
+	&__button_2
+		min-height: 48px
+		width: 157px
+
+		background-color: transparent
+		color: variables.$side-1
+
+		font-weight: 700
+		font-size: 1rem
+		line-height: 2rem
+
+		text-align: center
+		letter-spacing: 0.2px
+
+		border: 1px solid variables.$side-1
+		border-radius: 38px
+
+		&:hover
+			cursor: pointer
+
+			color: variables.$light-txt
+			background-color: variables.$side-1
+
+	&__container
+		position: relative
+		padding-bottom: 191px
+
+	&__services
+		position: absolute
+		bottom: -100px
+		left: 0
+
+
+.services
+	min-height: 242px
+	width: 100%
+
+	display: flex
+	align-items: center
+	justify-content: space-between
+
+	&__item
+		min-height: 242px
+		width: 328px
+
+		background-color: variables.$bg-light
+		padding: 35px 40px
+
+		&:last-child
+			background-color: variables.$side-1
+
+	&__icon
+		width: 48px
+		height: 48px
+
+	&__title
+		margin-top: 10px
+		min-height: 64px
+
+		font-weight: 700
+		font-size: 1.7rem
+		line-height: 2.28rem
+	
+		letter-spacing: 0.1px
+		color: variables.$main-txt
+
+	&__descr
+		margin-top: 10px
+		min-height: 40px
+
+		font-weight: 500
+		font-size: 1rem
+		line-height: 1.42rem
+		letter-spacing: 0.2px
+
+		color: variables.$side-txt
+
+
+
+
+.title
+	display: block
+	min-height: 240px
+	width: 510px
+
+	font-family: "Montserrat"
+	font-size: 4.5rem
+	font-weight: 800
+
+	line-height: 5.75rem
+	letter-spacing: 0.2px
+	text-align: left
+
+	color: variables.$main-txt
+	
+.container
+	max-width: 1144px
+	margin: 0 auto
+
+	background-color: rgba(0, 0, 0, 0.2)
+
+.header
+	height: 104px
+
+	display: flex
+	align-items: center
+	justify-content: left
+
+	&__nav
+		margin-left: 134px
+
+		
+.list
+	display: flex
+	align-items: center
+	justify-content: space-between
+
+	font-family: "Montserrat"
+	font-size: 1rem
+	font-weight: 600
+
+	line-height: 24px
+	letter-spacing: 0.2px
+	text-align: center
+
+	color: variables.$side-txt
+
+	&__item
+		margin-left: 21px
+
+		&:first-child
+			margin-left: 0px
+
+	&__link:hover
+		text-decoration: underline
+		text-decoration-color: variables.$side-txt
+
+
+		
