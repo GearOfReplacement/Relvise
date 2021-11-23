@@ -30,13 +30,13 @@ img
 	width: 100%
 	height: 100%
 
+// ******************************************************			banner(header+nav)			******************************************************
+
 .banner
 	width: 100%
 	min-height: 794px
 	
-
 	background: url("../assets/image/background_banner.jpg") 50% 50% / cover no-repeat
-
 	font-family: "Montserrat"
 
 	&__title
@@ -112,61 +112,7 @@ img
 			background-color: variables.$side-1
 
 	&__container
-		position: relative
 		padding-bottom: 191px
-
-	&__services
-		position: absolute
-		bottom: -100px
-		left: 0
-
-
-.services
-	min-height: 242px
-	width: 100%
-
-	display: flex
-	align-items: center
-	justify-content: space-between
-
-	&__item
-		min-height: 242px
-		width: 328px
-
-		background-color: variables.$bg-light
-		padding: 35px 40px
-
-		&:last-child
-			background-color: variables.$side-1
-
-	&__icon
-		width: 48px
-		height: 48px
-
-	&__title
-		margin-top: 10px
-		min-height: 64px
-
-		font-weight: 700
-		font-size: 1.7rem
-		line-height: 2.28rem
-	
-		letter-spacing: 0.1px
-		color: variables.$main-txt
-
-	&__descr
-		margin-top: 10px
-		min-height: 40px
-
-		font-weight: 500
-		font-size: 1rem
-		line-height: 1.42rem
-		letter-spacing: 0.2px
-
-		color: variables.$side-txt
-
-
-
 
 .title
 	display: block
@@ -198,8 +144,7 @@ img
 
 	&__nav
 		margin-left: 134px
-
-		
+	
 .list
 	display: flex
 	align-items: center
@@ -225,5 +170,154 @@ img
 		text-decoration: underline
 		text-decoration-color: variables.$side-txt
 
+// ******************************************************			results			******************************************************
+.results
+	min-height: 526px
+	width: 100%
 
+	&__container
+		position: relative
+		padding-bottom: 50px
+
+	&__services
+		transform: translateY(-112px)
+
+	&__subtitle
+		transform: translateY(-30px)
+
+	&__descr
+		max-width: 512px
+		margin: 10px auto 0
+		transform: translateY(-30px)
+
+	&__wrapper
+		margin-top: 50px
+		transform: translateY(-30px)
+
+.services
+	min-height: 242px
+	width: 100%
+
+	display: flex
+	align-items: stretch
+	justify-content: space-between
+
+	&__item
+		min-height: 242px
+		max-width: 328px
+		flex: 1 1 auto
+
+		background-color: variables.$bg-light
+		padding: 35px 40px
+
+		&:last-child
+			background-color: variables.$side-1
+
+			.services__title, .services__descr
+				color: variables.$light-txt
+
+	&__icon
+		width: 48px
+		height: 48px
+
+		display: flex
+		align-items: center
+
+	&__title
+		margin-top: 10px
+		min-height: 64px
+
+		font-weight: 700
+		font-size: 1.7rem
+		line-height: 2.28rem
+	
+		letter-spacing: 0.1px
+		color: variables.$main-txt
+
+	&__descr
+		margin-top: 10px
+		min-height: 40px
+
+		font-weight: 500
+		font-size: 1rem
+		line-height: 1.42rem
+		letter-spacing: 0.2px
+
+		color: variables.$side-txt
+
+.subtitle
+	font-family: "Montserrat"
+	font-size: 2.85rem
+	font-weight: 700
+
+	line-height: 4rem
+	letter-spacing: 0.2px
+	text-align: center
+
+	color: variables.$main-txt
+
+.section-descr
+	font-family: "Montserrat"
+	font-size: 1rem
+	font-weight: 500
+
+	line-height: 1.42rem
+	letter-spacing: 0.2px
+	text-align: center
+
+	color: variables.$side-txt
+
+.wrapper
+	min-height: 210px
+	width: 100%
+
+	display: flex
+	align-items: stretch
+	justify-content: space-between
+
+	&__block
+		min-height: 210px
+		max-width: 230px
+
+		display: flex
+		flex-direction: column
+		align-items: center
+		justify-content: space-between
+
+		padding: 30px
+
+	&__pic
+		max-height: 48px
+		max-width: 48px
+
+		min-height: 48px
+
+		display: flex
+		align-items: center
+		justify-content: center
 		
+
+	&__count
+		font-family: "Montserrat"
+		font-size: 2.85rem
+		font-weight: 700
+
+		line-height: 4rem
+		letter-spacing: 0.2px
+		text-align: center
+
+		color: variables.$main-txt
+
+	&__descr
+		min-width: 170px
+
+		font-family: "Montserrat"
+		font-size: 1.14rem
+		font-weight: 700
+
+		line-height: 1.7rem
+		letter-spacing: 0.1px
+		text-align: center
+
+		color: variables.$side-txt
+
