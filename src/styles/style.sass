@@ -400,11 +400,13 @@ img
 // ******************************************************			about									******************************************************
 
 .about
-	min-height: 890px
+	min-height: 769px
 	width: 100%	
+	
 
 	&__container
 		margin-top: 100px
+		padding-bottom: 100px
 
 	&__descr
 		max-width: 511px
@@ -491,3 +493,205 @@ img
 
 // ******************************************************			companies								******************************************************
 
+.companies
+	min-height: 262px
+	width: 100%
+
+	&__container
+		padding-bottom: 87px
+
+	&__wrapper
+		display: flex
+		align-items: stretch
+		justify-content: space-between
+
+		min-height: 175px
+		padding: 0 25px
+
+	&__block
+		display: flex
+		align-items: center
+		justify-content: center
+
+// ******************************************************			subscribe								******************************************************
+
+.subscribe
+	height: 77px
+	width: 100%
+
+	background-color: variables.$bg-dark
+
+	&__container
+		height: 77px
+		position: relative
+
+	&__wrapper
+		width: 100%
+		min-height: 124px
+
+		position: absolute
+		top: -67px
+		left: 0
+
+	&__module
+		min-height: 124px
+		width: calc(86%)
+
+		margin: 0 auto
+		padding: 30px 50px
+
+		background-color: variables.$bg-dark
+		//border: 1px solid #000 ???
+		border-radius: 2px
+
+		display: flex
+		align-items: center
+		justify-content: space-between
+
+	&__title
+		max-width: 266px
+
+		font-size: 1.7rem
+		font-weight: 700
+		line-height: 2.28rem
+		letter-spacing: 0.1px
+		text-align: left
+		color: variables.$light-txt
+
+	&__form
+		width: 450px
+
+		display: flex
+
+	&__email
+		width: 333px
+		height: 58px
+
+		padding-left: 20px
+		font-size: 1rem
+		font-weight: 400
+		line-height: 2rem
+		letter-spacing: 0.2px
+
+
+
+	&__button
+		width: 117px
+		height: 58px
+
+		
+		font-size: 1rem
+		font-weight: 400
+		line-height: 2rem
+		letter-spacing: 0.2px
+		text-align: center
+
+		color: variables.$light-txt
+		background-color: variables.$main
+
+
+// ******************************************************			getIn										******************************************************
+
+.getIn
+	min-height: 808px
+	width: 100%
+
+	&__container
+		margin-top: 80px
+		padding-bottom: 148px
+
+	&__descr
+		max-width: 470px
+		margin: 10px auto 0
+
+	&__wrapper
+		min-height: 393px
+		max-width: 984px
+
+		margin: 80px auto 0
+
+		display: flex
+		align-items: center
+		justify-content: center
+
+
+	&__block
+		height: 393px
+		max-width: 328px
+		min-width: 320px
+
+		display: flex
+		flex-direction: column
+		align-items: center
+		justify-content: center
+
+		background-color: variables.$bg-dark
+
+		&_small
+			height: 333px
+			background-color: variables.$bg-light
+	
+	&__pic
+		max-height: 72px
+		max-width: 72px
+
+	&__mail
+		margin-top: 15px
+		max-width: 221px
+
+		font-size: 1rem
+		font-weight: 600
+		line-height: 1.7rem
+		letter-spacing: 0.2px
+		text-align: center
+
+		color: variables.$main-txt
+
+		&_white
+			color: variables.$light-txt
+
+
+	&__getSup
+		margin-top: 15px
+
+		font-size: 1.14rem
+		font-weight: 700
+		line-height: 1.7rem
+		letter-spacing: 0.1px
+		text-align: center
+
+		color: variables.$main-txt
+
+		&_white
+			color: variables.$light-txt
+
+
+	&__button
+		margin-top: 15px
+
+		width: 160px
+		height: 48px
+		padding: 10px 20px
+		
+		border: 1px solid variables.$main
+		border-radius: 8px
+
+		color: variables.$main
+		background-color: variables.$bg-light
+
+		cursor: pointer
+
+		&:hover
+			color: variables.$light-txt
+			background-color: variables.$main
+
+		&_white
+			border: 1px solid variables.$light-txt
+
+			color: variables.$light-txt
+			background-color: variables.$bg-dark
+
+			&:hover
+				color: variables.$main
+				background-color: variables.$bg-light
+			
