@@ -589,7 +589,6 @@ img
 		color: variables.$light-txt
 		background-color: variables.$main
 
-
 // ******************************************************			getIn										******************************************************
 
 .getIn
@@ -694,4 +693,103 @@ img
 			&:hover
 				color: variables.$main
 				background-color: variables.$bg-light
-			
+
+// ******************************************************			contactUS								******************************************************
+
+.contactUs
+	width: 100%
+	min-height: 142px
+
+	&__container
+		display: flex
+		align-items: center
+		justify-content: space-between
+		flex-wrap: wrap
+
+	&__title, &__subtitle
+		max-width: 500px
+		min-width: 320px
+
+	&__title > h3
+		font-size: 1.7rem
+		font-weight: 700
+		line-height: 2.2rem
+		letter-spacing: 0.1px
+		text-align: left
+		color: variables.$main-txt
+
+	&__subtitle
+		margin-top: 10px
+		font-size: 1rem
+		font-weight: 500
+		line-height: 1.4rem
+		letter-spacing: 0.2
+		text-align: left
+		color: variables.$side-txt
+
+	&__button
+		width: 160px
+		height: 58px
+		
+		border: 1px solid variables.$main
+		border-radius: 8px
+
+		color: variables.$bg-light
+		background-color: variables.$main
+
+		cursor: pointer
+
+		&:hover
+			color: variables.$main
+			background-color: transparent
+
+
+.footer
+	width: 100%
+	min-height: 272px
+
+	background-color: variables.$side-2			
+	color: variables.$light-txt
+	text-align: left
+
+	&__container
+		display: flex
+		align-items: center
+		justify-content: space-between
+		flex-wrap: wrap
+		
+	&__item
+		min-height: 170px
+		margin-top: 50px
+
+	&__section-title
+		font-size: 1.14rem
+		font-weight: 700
+		line-height: 1.7rem
+		letter-spacing: 0.1px
+
+	&__section-list
+		margin-top: 20px
+		flex-direction: column
+		align-items: start
+
+.list
+	&__li
+		display: flex
+		align-items: center
+		justify-content: flex-start
+
+		margin-top: 10px
+		font-size: 1rem
+		font-weight: 600
+		line-height: 1.7rem
+		letter-spacing: 0.2px
+
+		&:first-child
+			margin-top: 0
+
+	&__icon
+		max-width: 24px
+		max-height: 24px
+
+		margin-right: 10px
