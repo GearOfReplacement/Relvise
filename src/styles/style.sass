@@ -12,11 +12,15 @@ html
 	font-family: "Montserrat"
 
 a
+	display: block
+	width: 100%
+	height: 100%
+
 	text-decoration: none
 	color: #fff
 	
 	cursor: pointer
-
+	
 ol, ul
 	list-style-type: none
 
@@ -31,12 +35,190 @@ img
 	width: 100%
 	height: 100%
 
-// ******************************************************			banner(header+nav)			******************************************************
+.body_hidden
+	overflow: hidden
+
+.container
+	max-width: 1144px
+	margin: 0 auto
+
+	background-color: rgba(0, 0, 0, 0.2)
+
+
+
+// ******************************************************			header+nav							******************************************************
+
+
+
+.header
+	height: 104px
+	width: 100%
+
+	position: fixed
+	top: 0
+	left: 0
+	z-index: 10
+
+	transition: background-color 400ms
+	
+	&__container
+		height: 100%
+
+		display: flex
+		align-items: center
+		justify-content: flex-start
+
+	&__logo
+		max-width: 100px
+
+	&__nav
+		margin-left: 134px
+
+	&_scrolled, &_touched
+		background-color: variables.$bg-light
+
+.list
+	display: flex
+	align-items: center
+	justify-content: space-between
+
+	font-family: "Montserrat"
+	font-size: 1rem
+	font-weight: 600
+
+	line-height: 24px
+	letter-spacing: 0.2px
+	text-align: center
+
+	color: variables.$side-txt
+
+	&__item
+		margin-left: 21px
+
+		&:first-child
+			margin-left: 0px
+
+	&__link:hover
+		text-decoration: underline
+		text-decoration-color: variables.$side-txt
+
+.menu-burger
+	display: none
+	position: relative
+	
+	width: 30px
+	height: 30px
+
+	&__center
+		width: 100%
+		height: 4px
+		background-color: variables.$side-2
+
+		transition-duration: 400ms
+
+	&::before, &::after
+		content: ''
+		position: absolute
+		width: 100%
+		height: 4px
+		background-color: variables.$side-2
+
+		transition-duration: 200ms
+
+	&::before
+		top: 0
+		left: 0
+
+	&::after
+		bottom: 0
+		left: 0
+
+@media screen and ( max-width: 520px )
+	.header
+		height: 60px
+		
+		&__container
+			justify-content: space-between
+
+		&__logo
+			margin-left: 10px
+
+	.nav
+		margin-left: 0
+		visibility: hidden
+		pointer-events: none
+
+		position: fixed
+		top: 60px
+		left: -100%
+
+		transition: left 400ms, visibility 400ms
+
+		width: 100%
+		height: 100%
+		background-color: rgba(37, 43, 66, 0.95)
+
+		&_active
+			visibility: visible
+			pointer-events: all
+			left: 0
+
+	.menu-burger
+		display: flex
+		align-items: center
+		justify-content: center
+
+		margin-right: 10px
+		z-index: 10
+
+	.menu-burger_active
+		transform: translateY(-10%)
+
+		.menu-burger__center
+			transform: scale(0)
+
+		&::before
+			top: 50%
+			transform: rotate(45deg)
+
+		&::after
+			top: 50%
+			transform: rotate(-45deg)
+
+	.list
+		flex-direction: column
+		line-height: 60px
+
+		&__item
+			height: 60px
+			width: 100%
+			margin-left: 0
+
+			position: relative
+
+			&::after
+				content: ''
+
+				position: absolute
+				bottom: 0
+				left: 20%
+
+				width: 60%
+				height: 1px
+				background-color: variables.$main
+				border-radius: 8px
+
+
+
+// ******************************************************			banner									******************************************************
+
+
 
 .banner
+	padding-top: 104px
 	width: 100%
 	min-height: 794px
-	
+
 	background: url("../assets/image/background_banner.jpg") 50% 50% / cover no-repeat
 	font-family: "Montserrat"
 
@@ -130,48 +312,39 @@ img
 
 	color: variables.$main-txt
 	
-.container
-	max-width: 1144px
-	margin: 0 auto
+@media screen and ( max-width: 520px )
+	.banner
+		&__title
+			margin: 0 auto
+			
+		&__descr
+			margin: 32px auto 0
+			width: 300px
 
-	background-color: rgba(0, 0, 0, 0.2)
+		&__buttons
+			width: 352px
+			margin: 60px auto 0
+			justify-content: space-between
 
-.header
-	height: 104px
+	.title
+		width: 300px
+		min-height: 140px
 
-	display: flex
-	align-items: center
-	justify-content: left
+		font-size: 3rem
+		line-height: 3rem
 
-	&__nav
-		margin-left: 134px
+@media screen and ( max-width: 400px )
+		.banner
+			&__buttons
+				width: 300px
+				flex-direction: column
+				row-gap: 20px
+
+
 	
-.list
-	display: flex
-	align-items: center
-	justify-content: space-between
-
-	font-family: "Montserrat"
-	font-size: 1rem
-	font-weight: 600
-
-	line-height: 24px
-	letter-spacing: 0.2px
-	text-align: center
-
-	color: variables.$side-txt
-
-	&__item
-		margin-left: 21px
-
-		&:first-child
-			margin-left: 0px
-
-	&__link:hover
-		text-decoration: underline
-		text-decoration-color: variables.$side-txt
-
 // ******************************************************			results									******************************************************
+
+
 
 .results
 	min-height: 526px
@@ -203,7 +376,8 @@ img
 	display: flex
 	align-items: stretch
 	justify-content: space-between
-
+	gap: 8px
+	
 	&__item
 		min-height: 242px
 		max-width: 328px
@@ -276,6 +450,8 @@ img
 	display: flex
 	align-items: stretch
 	justify-content: space-between
+	flex-wrap: wrap
+	gap: 8px
 
 	&__block
 		min-height: 210px
@@ -323,7 +499,40 @@ img
 
 		color: variables.$side-txt
 
+@media screen and ( max-width: 960px )
+	.wrapper
+		max-width: 700px
+		margin: 50px auto 0
+		gap: 20px
+		justify-content: space-evenly
+
+@media screen and ( max-width: 768px )
+	.services
+		width: 500px
+		margin: 0 auto
+
+		flex-wrap: wrap
+		gap: 20px
+
+		&__item
+			max-width: 500px
+
+@media screen and ( max-width: 520px )
+	.services
+		width: 320px
+		margin: 0 auto
+
+		flex-wrap: wrap
+		gap: 20px
+
+		&__item
+			max-width: 320px
+
+
+
 // ******************************************************			advice									******************************************************
+
+
 
 .advice
 	min-height: 575px
@@ -346,6 +555,8 @@ img
 	display: flex
 	align-items: stretch
 	justify-content: space-between
+	flex-wrap: wrap
+	gap: 8px
 
 	font-family: "Montserrat"
 
@@ -397,7 +608,18 @@ img
 		max-height: 138px
 		width: 100%
 
+@media screen and ( max-width: 960px )
+	.wrap
+		max-width: 700px
+		margin: 50px auto 0
+		gap: 40px
+		justify-content: space-evenly
+
+
+
 // ******************************************************			about									******************************************************
+
+
 
 .about
 	min-height: 769px
@@ -491,7 +713,11 @@ img
 
 		color: variables.$side-txt
 
+
+
 // ******************************************************			companies								******************************************************
+
+
 
 .companies
 	min-height: 262px
@@ -505,6 +731,7 @@ img
 		align-items: stretch
 		justify-content: space-between
 
+		gap: 30px
 		min-height: 175px
 		padding: 0 25px
 
@@ -513,7 +740,23 @@ img
 		align-items: center
 		justify-content: center
 
+@media screen and ( max-width: 768px )
+	.companies
+
+		&__container
+			padding-bottom: 174px
+
+		&__wrapper
+			max-width: 520px
+			margin: 0 auto
+
+			flex-wrap: wrap
+	
+
+
 // ******************************************************			subscribe								******************************************************
+
+
 
 .subscribe
 	height: 77px
@@ -541,15 +784,16 @@ img
 		padding: 30px 50px
 
 		background-color: variables.$bg-dark
-		//border: 1px solid #000 ???
 		border-radius: 2px
 
 		display: flex
 		align-items: center
 		justify-content: space-between
+		gap: 16px
 
 	&__title
 		max-width: 266px
+		flex-grow: 1
 
 		font-size: 1.7rem
 		font-weight: 700
@@ -559,13 +803,14 @@ img
 		color: variables.$light-txt
 
 	&__form
-		width: 450px
-
+		max-width: 450px
+		flex-grow: 2
 		display: flex
 
 	&__email
-		width: 333px
+		max-width: 333px
 		height: 58px
+		flex-grow: 3
 
 		padding-left: 20px
 		font-size: 1rem
@@ -573,13 +818,11 @@ img
 		line-height: 2rem
 		letter-spacing: 0.2px
 
-
-
 	&__button
-		width: 117px
+		max-width: 117px
 		height: 58px
+		flex-grow: 1
 
-		
 		font-size: 1rem
 		font-weight: 400
 		line-height: 2rem
@@ -589,7 +832,35 @@ img
 		color: variables.$light-txt
 		background-color: variables.$main
 
+		&:hover
+			cursor: pointer
+
+@media screen and ( max-width: 768px )
+	.subscribe
+		&__module
+			flex-wrap: wrap
+			gap: 20px
+
+@media screen and ( max-width: 420px )
+	.subscribe
+		margin-bottom: 180px
+
+		&__form
+			flex-direction: column
+			align-items: center
+			gap: 10px
+		
+		&__module
+			width: 100%
+
+		&__button
+			width: 100%
+
+
+
 // ******************************************************			getIn										******************************************************
+
+
 
 .getIn
 	min-height: 808px
@@ -613,16 +884,15 @@ img
 		align-items: center
 		justify-content: center
 
-
 	&__block
 		height: 393px
 		max-width: 328px
-		min-width: 320px
 
 		display: flex
 		flex-direction: column
 		align-items: center
 		justify-content: center
+		flex: 1 1 auto
 
 		background-color: variables.$bg-dark
 
@@ -694,7 +964,21 @@ img
 				color: variables.$main
 				background-color: variables.$bg-light
 
+@media screen and ( max-width: 768px )
+	.getIn
+		&__wrapper
+			max-width: 500px
+			flex-wrap: wrap
+			gap: 20px
+
+		&__block
+			min-width: 320px
+
+
+
 // ******************************************************			contactUS								******************************************************
+
+
 
 .contactUs
 	width: 100%
@@ -743,7 +1027,27 @@ img
 			color: variables.$main
 			background-color: transparent
 
+@media screen and ( max-width: 768px )
+	.contactUs
+		&__title > h3
+			text-align: center
 
+		&__subtitle
+			text-align: center
+			margin: 10px auto 0
+
+		&__container
+			flex-direction: column
+			justify-content: center
+			padding-bottom: 40px
+			gap: 40px
+
+
+
+// ******************************************************			footer  								******************************************************
+
+
+	
 .footer
 	width: 100%
 	min-height: 272px
@@ -757,6 +1061,7 @@ img
 		align-items: center
 		justify-content: space-between
 		flex-wrap: wrap
+		gap: 10px
 		
 	&__item
 		min-height: 170px
@@ -793,3 +1098,38 @@ img
 		max-height: 24px
 
 		margin-right: 10px
+
+@media screen and ( max-width: 768px )
+	.footer
+		&__container
+			max-width: calc(90%)
+			padding-left: calc(14%)
+			padding-right: calc(14%)
+			justify-content: space-between
+			column-gap: 20px
+			
+		&__item
+			min-width: 180px
+
+@media screen and ( max-width: 624px )
+	.footer
+		&__container
+			padding-left: calc(7%)
+			padding-right: calc(7%)
+
+@media screen and ( max-width: 500px )
+	.footer
+		&__container
+			flex-direction: column
+			align-items: flex-start
+			justify-content: center
+			padding-left: 0
+			padding-right: 0
+
+		&__item
+			margin-left: calc(27%)
+
+@media screen and ( max-width: 400px)
+	.footer
+		&__item
+			margin-left: calc(20%)
