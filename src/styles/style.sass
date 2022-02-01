@@ -42,7 +42,7 @@ img
 	max-width: 1144px
 	margin: 0 auto
 
-	background-color: rgba(0, 0, 0, 0.2)
+	// background-color: rgba(0, 0, 0, 0.2)
 
 
 
@@ -90,13 +90,14 @@ img
 	letter-spacing: 0.2px
 	text-align: center
 
-	color: variables.$side-txt
-
 	&__item
 		margin-left: 21px
 
 		&:first-child
 			margin-left: 0px
+
+	&__link
+		color: variables.$side-txt
 
 	&__link:hover
 		text-decoration: underline
@@ -188,6 +189,9 @@ img
 	.list
 		flex-direction: column
 		line-height: 60px
+
+		&__link
+			color: variables.$light-txt
 
 		&__item
 			height: 60px
@@ -637,11 +641,14 @@ img
 	&__wrapper
 		margin-top: 100px
 
-.wrapper__video
-	min-height: 442px
-	width: 597px
+	&__video
+		width: 100%
+		height: 100%
 
-	background-color: variables.$main
+.wrapper__video
+	max-height: 442px
+	width: 597px
+	height: auto
 
 .content
 	min-height: 438px		
@@ -1098,6 +1105,9 @@ img
 		max-height: 24px
 
 		margin-right: 10px
+
+	.use
+		fill: #f01e1e
 
 @media screen and ( max-width: 768px )
 	.footer
